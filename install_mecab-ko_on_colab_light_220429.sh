@@ -24,16 +24,21 @@ cd mecab-0.996-ko-0.9.2/
 
 echo "installing mecab-0.996-ko-0.9.2.tar.gz........"
 echo 'configure'
-! ./configure > /dev/null 2>&1
+#### ! ./configure > /dev/null 2>&1
+! ./configure
 echo 'make'
-! make > /dev/null 2>&1
+### ! make > /dev/null 2>&1
+! make
 echo 'make check'
-! make check > /dev/null 2>&1
+### ! make check > /dev/null 2>&1
+make check
 echo 'make install'
-! make install > /dev/null 2>&1
+### ! make install > /dev/null 2>&1
+! make install
 
 echo 'ldconfig'
-! ldconfig > /dev/null 2>&1
+### ! ldconfig > /dev/null 2>&1
+! ldconfig
 echo "Done"
 
 echo "Change Directory to /content"
@@ -54,16 +59,20 @@ echo "Done"
 
 echo "installing........"
 echo 'configure'
-! ./configure > /dev/null 2>&1
+### ! ./configure > /dev/null 2>&1
+! ./configure
 echo 'make'
-! make > /dev/null 2>&1
+### ! make > /dev/null 2>&1
+! make
 echo 'make install'
-! make install > /dev/null 2>&1
+### ! make install > /dev/null 2>&1
+! make install
 
 echo 'bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/v0.6.0/scripts/mecab.sh)'
 echo 'https://github.com/konlpy/konlpy/issues/395#issue-1099168405 - 2022.01.11'
 #! bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)  > /dev/null 2>&1
-! bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/v0.6.0/scripts/mecab.sh)  > /dev/null 2>&1
+### ! bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/v0.6.0/scripts/mecab.sh)  > /dev/null 2>&1
+! bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/v0.6.0/scripts/mecab.sh)
 echo "Done"
 
 echo "Install mecab-python"
