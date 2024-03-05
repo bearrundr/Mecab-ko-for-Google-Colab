@@ -62,7 +62,7 @@ if [[ "$(check_python_site_location_is_writable)" == "0" ]]; then
     at_user_site="--user"
 fi
 
-install_mecab_ko(){
+install_mecab_ko_orig(){
     cd /tmp
     curl -LO https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz
     tar zxfv mecab-0.996-ko-0.9.2.tar.gz
@@ -72,6 +72,19 @@ install_mecab_ko(){
     make check
     $sudo make install
 }
+
+
+install_mecab_ko(){
+    cd /tmp
+    curl -LO https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz
+    tar zxfv mecab-0.996-ko-0.9.2.tar.gz
+    cd mecab-0.996-ko-0.9.2
+    ./configure --build=aarch64-unknown-linux
+    make
+    make check
+    $sudo make install
+}
+
 
 install_automake(){
     ## install requirement automake1.11
